@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Fast Learn Programming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo Fixed: استخدام أيقونة بدلاً من صورة -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span>Fast Learn Programming</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="my-library.html">مكتبتي</a></li>
+                <li><a href="admin.html" class="active">لوحة التحكم</a></li>
+                <li><a href="#" id="logoutBtn">تسجيل خروج</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Admin Header -->
+    <section class="admin-header">
+        <div class="container">
+            <h1><i class="fas fa-cogs"></i> لوحة تحكم المسؤول</h1>
+            <p>إدارة المنصة والمستخدمين والكورسات</p>
+        </div>
+    </section>
+
+    <div class="container admin-container">
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-box">
+                <div class="stat-icon" style="background: #6366f1;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-details">
+                    <h3 id="totalUsers">0</h3>
+                    <p>إجمالي المستخدمين</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon" style="background: #10b981;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>11</h3>
+                    <p>الكورسات المتاحة</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon" style="background: #f59e0b;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="stat-details">
+                    <h3 id="totalEnrollments">0</h3>
+                    <p>إجمالي الاشتراكات</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon" style="background: #ec4899;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-details">
+                    <h3 id="completionRate">0%</h3>
+                    <p>معدل الإكمال</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Tabs -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="users">
+                <i class="fas fa-users"></i> المستخدمون
+            </button>
+            <button class="tab-btn" data-tab="courses">
+                <i class="fas fa-book"></i> الكورسات
+            </button>
+            <button class="tab-btn" data-tab="settings">
+                <i class="fas fa-cog"></i> الإعدادات
+            </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="users-tab">
+            <div class="section-header">
+                <h2>قائمة المستخدمين</h2>
+                <button class="btn btn-primary" onclick="addUser()">
+                    <i class="fas fa-user-plus"></i> إضافة مستخدم
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>الكورسات</th>
+                            <th>تاريخ التسجيل</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-content" id="courses-tab">
+            <div class="section-header">
+                <h2>إدارة الكورسات</h2>
+            </div>
+
+            <div class="courses-grid">
+                <!-- HTML -->
+                <div class="course-admin-card">
+                    <div class="course-admin-header" style="background: #e34c26;">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="course-admin-body">
+                        <div class="course-stat">
+                            <span>المشتركون:</span>
+                            <strong id="html-enrollments">0</strong>
+                        </div>
+                        <div class="course-stat">
+                            <span>نسبة الإكمال:</span>
+                            <strong id="html-completion">0%</strong>
+                        </div>
+                        <button class="btn-edit" onclick="editCourse('html')">
+                            <i class="fas fa-edit"></i> تعديل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="course-admin-card">
+                    <div class="course-admin-header" style="background: #264de4;">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="course-admin-body">
+                        <div class="course-stat">
+                            <span>المشتركون:</span>
+                            <strong id="css-enrollments">0</strong>
+                        </div>
+                        <div class="course-stat">
+                            <span>نسبة الإكمال:</span>
+                            <strong id="css-completion">0%</strong>
+                        </div>
+                        <button class="btn-edit" onclick="editCourse('css')">
+                            <i class="fas fa-edit"></i> تعديل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="course-admin-card">
+                    <div class="course-admin-header" style="background: #f0db4f; color: #323330;">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="course-admin-body">
+                        <div class="course-stat">
+                            <span>المشتركون:</span>
+                            <strong id="javascript-enrollments">0</strong>
+                        </div>
+                        <div class="course-stat">
+                            <span>نسبة الإكمال:</span>
+                            <strong id="javascript-completion">0%</strong>
+                        </div>
+                        <button class="btn-edit" onclick="editCourse('javascript')">
+                            <i class="fas fa-edit"></i> تعديل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- More courses... -->
+            </div>
+        </div>
+
+        <div class="tab-content" id="settings-tab">
+            <div class="section-header">
+                <h2>إعدادات المنصة</h2>
+            </div>
+
+            <div class="settings-form">
+                <div class="setting-item">
+                    <h3><i class="fas fa-palette"></i> المظهر</h3>
+                    <p>تحكم في الألوان والتصميم العام للمنصة</p>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-paint-brush"></i> تخصيص المظهر
+                    </button>
+                </div>
+
+                <div class="setting-item">
+                    <h3><i class="fas fa-database"></i> قاعدة البيانات</h3>
+                    <p>إدارة البيانات والنسخ الاحتياطي</p>
+                    <button class="btn btn-secondary" onclick="exportData()">
+                        <i class="fas fa-download"></i> تصدير البيانات
+                    </button>
+                    <button class="btn btn-danger" onclick="clearData()">
+                        <i class="fas fa-trash"></i> مسح كل البيانات
+                    </button>
+                </div>
+
+                <div class="setting-item">
+                    <h3><i class="fas fa-bell"></i> الإشعارات</h3>
+                    <p>إعدادات الإشعارات والتنبيهات</p>
+                    <label class="switch">
+                        <input type="checkbox" id="notificationsToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fast Learn Programming. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

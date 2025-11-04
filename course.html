@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكورس - Fast Learn Programming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span>Fast Learn Programming</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="my-library.html">مكتبتي</a></li>
+                <li><a href="admin.html" id="adminLink" style="display:none;">لوحة التحكم</a></li>
+                <li><a href="#" id="logoutBtn" style="display:none;">تسجيل خروج</a></li>
+                <li><a href="login.html" id="loginLink">تسجيل دخول</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <div class="course-title">
+                <div class="course-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div>
+                    <h1 id="courseName">كورس HTML</h1>
+                    <p id="courseDescription">تعلم HTML من الصفر</p>
+                </div>
+            </div>
+
+            <div class="course-progress-section">
+                <h3>نسبة الإنجاز</h3>
+                <div class="progress-bar-large">
+                    <div class="progress-fill-large" id="courseProgressBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                    <span id="progressPercentage">0%</span>
+                    <span id="progressStatus">ابدأ الآن</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Layout -->
+    <div class="container">
+        <div class="course-layout">
+            <!-- Sidebar -->
+            <aside class="course-sidebar">
+                <div class="sidebar-header">
+                    <h2><i class="fas fa-route"></i> خريطة الطريق</h2>
+                </div>
+                <div class="roadmap-list" id="roadmapList">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div class="course-actions">
+                    <button class="btn btn-success" id="markCompleteBtn">
+                        <i class="fas fa-check-circle"></i> تحديد كمكتمل
+                    </button>
+                    <button class="btn btn-secondary" id="resetProgressBtn">
+                        <i class="fas fa-rotate-right"></i> إعادة تعيين
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="course-content">
+                <!-- Video Player -->
+                <div class="video-container">
+                    <div id="videoPlayer"></div>
+                    <div class="video-controls">
+                        <span id="videoTitle">الفيديو التعليمي</span>
+                        <button class="btn-icon" id="fullscreenBtn" title="ملء الشاشة">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Info Cards -->
+                <div class="course-info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <h4>نوع المحتوى</h4>
+                            <p id="contentType">فيديو شامل</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>الوقت المقدر</h4>
+                            <p>حسب سرعتك</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-signal"></i>
+                        <div>
+                            <h4>المستوى</h4>
+                            <p>مبتدئ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="notes-section">
+                    <h3><i class="fas fa-sticky-note"></i> ملاحظاتي</h3>
+                    <textarea 
+                        id="courseNotes" 
+                        rows="6" 
+                        placeholder="اكتب ملاحظاتك هنا... سيتم حفظها تلقائياً"
+                    ></textarea>
+                    <button class="btn btn-primary" id="saveNotesBtn">
+                        <i class="fas fa-save"></i> حفظ الملاحظات
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&#169; 2025 Fast Learn Programming. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/course.js"></script>
+</body>
+</html>

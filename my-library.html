@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبتي - Fast Learn Programming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/library.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo Fixed: استخدام أيقونة بدلاً من صورة -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span>Fast Learn Programming</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="my-library.html" class="active">مكتبتي</a></li>
+                <li><a href="admin.html" id="adminLink" style="display:none;">لوحة التحكم</a></li>
+                <li><a href="#" id="logoutBtn">تسجيل خروج</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Library Header -->
+    <section class="library-header">
+        <div class="container">
+            <h1><i class="fas fa-book-reader"></i> مكتبتي</h1>
+            <p>الكورسات التي بدأت تعلمها</p>
+        </div>
+    </section>
+
+    <!-- Library Content -->
+    <section class="library-section">
+        <div class="container">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalCourses">0</h3>
+                        <p>إجمالي الكورسات</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="completedCourses">0</h3>
+                        <p>كورسات مكتملة</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="inProgressCourses">0</h3>
+                        <p>قيد الدراسة</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="averageProgress">0%</h3>
+                        <p>متوسط التقدم</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> الكل
+                </button>
+                <button class="filter-btn" data-filter="in-progress">
+                    <i class="fas fa-clock"></i> قيد الدراسة
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check-circle"></i> مكتملة
+                </button>
+            </div>
+
+            <!-- Library Courses Grid -->
+            <div class="library-grid" id="libraryGrid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-book-open"></i>
+                <h3>المكتبة فارغة</h3>
+                <p>ابدأ بإضافة كورسات من الصفحة الرئيسية</p>
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> اذهب للرئيسية
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fast Learn Programming</h3>
+                    <p>منصتك المثالية لتعلم البرمجة باللغة العربية</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="my-library.html">مكتبتي</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fast Learn Programming. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/library.js"></script>
+</body>
+</html>

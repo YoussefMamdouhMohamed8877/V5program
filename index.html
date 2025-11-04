@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منصة تعليمية لتعلم البرمجة باللغة العربية - 11 لغة برمجة مجاناً">
+    <title>Fast Learn Programming - تعلم البرمجة بسرعة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span>Fast Learn Programming</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="my-library.html">مكتبتي</a></li>
+                <li><a href="admin.html" id="adminLink" style="display:none;">لوحة التحكم</a></li>
+                <li><a href="#" id="logoutBtn" style="display:none;">تسجيل خروج</a></li>
+                <li><a href="login.html" id="loginLink">تسجيل دخول</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">تعلم البرمجة بسرعة وسهولة</h1>
+                <p class="hero-description">
+                    منصة تعليمية متكاملة تقدم لك أفضل الدورات البرمجية باللغة العربية. 
+                    ابدأ رحلتك في عالم البرمجة الآن مع خرائط طريق واضحة ومحتوى احترافي مجاناً!
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-book"></i>
+                        <span>11 لغة برمجة</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-video"></i>
+                        <span>محتوى شامل</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-certificate"></i>
+                        <span>تتبع التقدم</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Cards Section -->
+    <section class="languages-section">
+        <div class="container">
+            <h2 class="section-title">اختر لغة البرمجة</h2>
+            
+            <!-- Language Cards Grid -->
+            <div class="language-cards">
+                <!-- HTML Card -->
+                <div class="language-card" data-lang="html">
+                    <div class="card-icon html-color">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML</h3>
+                    <p>لغة ترميز النصوص التشعبية - أساس كل صفحة ويب</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- CSS Card -->
+                <div class="language-card" data-lang="css">
+                    <div class="card-icon css-color">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS</h3>
+                    <p>لغة تنسيق صفحات الويب - اجعل موقعك جذاباً</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- JavaScript Card -->
+                <div class="language-card" data-lang="javascript">
+                    <div class="card-icon js-color">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>لغة البرمجة للويب - أضف التفاعل لموقعك</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- Node.js Card -->
+                <div class="language-card" data-lang="nodejs">
+                    <div class="card-icon node-color">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>بيئة تشغيل JavaScript - برمجة الخوادم</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- PHP Card -->
+                <div class="language-card" data-lang="php">
+                    <div class="card-icon php-color">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3>PHP</h3>
+                    <p>لغة برمجة الويب من جانب الخادم</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- C Card -->
+                <div class="language-card" data-lang="c">
+                    <div class="card-icon c-color">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>C</h3>
+                    <p>لغة البرمجة الأم - أساس البرمجة الحديثة</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- C++ Card -->
+                <div class="language-card" data-lang="cpp">
+                    <div class="card-icon cpp-color">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>C++</h3>
+                    <p>لغة برمجة قوية - الألعاب والأنظمة</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- Java Card -->
+                <div class="language-card" data-lang="java">
+                    <div class="card-icon java-color">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Java</h3>
+                    <p>لغة برمجة متعددة المنصات - تطبيقات قوية</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- Dart Card -->
+                <div class="language-card" data-lang="dart">
+                    <div class="card-icon dart-color">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Dart</h3>
+                    <p>لغة Flutter - تطبيقات الموبايل الحديثة</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- C# Card -->
+                <div class="language-card" data-lang="csharp">
+                    <div class="card-icon csharp-color">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>C#</h3>
+                    <p>لغة مايكروسوفت - تطبيقات ويندوز وألعاب Unity</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+
+                <!-- Python Card -->
+                <div class="language-card" data-lang="python">
+                    <div class="card-icon python-color">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>لغة سهلة وقوية - الذكاء الاصطناعي وتحليل البيانات</p>
+                    <div class="card-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fast Learn Programming</h3>
+                    <p>منصتك المثالية لتعلم البرمجة باللغة العربية. نقدم محتوى مجاني عالي الجودة لمساعدتك في بدء رحلتك البرمجية.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="my-library.html">مكتبتي</a></li>
+                        <li><a href="login.html">تسجيل دخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fast Learn Programming. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
